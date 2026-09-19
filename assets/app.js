@@ -32,7 +32,7 @@ function check(){
  const required=['asset','date',...(mode==='text'?['frequency']:mode==='cycle'?['cycle','unit']:mode==='strategy'?['strategy']:[])];for(const k of required)if(m[k]===null)throw Error('Selecione a coluna: '+fields[k][0]);
  const used=Object.values(m).filter(v=>v!==null);if(new Set(used).size!==used.length)throw Error('Uma coluna foi selecionada para mais de um campo. Revise o mapeamento.');
  const dictionary=mode==='strategy'?E.strategies($('strategies').value):new Map(),seen=new Map();
- for(const r of source){const get=k=>m[k]===null||m[k]===undefined?'':String(r.values[m[k]]??'').trim();try{
+ for(const r of source){const get=k=>{if(m[k]===null||m[k]===undefined)return '';if(workbook&&['hours','cycle'].includes(k)){const cell=workbook.Sheets[$('sheet').value][XLSX.utils.encode_cell({r:r.line-1,c:m[k]})];if(cell&&cell.t==='n')return String(cell.v);}return String(r.values[m[k]]??'').trim();};try{
  const asset=get('asset');if(!asset)throw Error('Identificador do equipamento vazio.');const anchor=E.date(get('date'));
  let rules;if(mode==='dates')rules=[{label:'Programada',value:0,unit:'DATA'}];else if(mode==='strategy'){rules=dictionary.get(E.clean(get('strategy')));if(!rules)throw Error('Estratégia sem equivalência: '+get('strategy'));}else{const rule=E.interval(get(mode==='cycle'?'cycle':'frequency'),mode==='cycle'?get('unit'):'',$('fortnight').value);rules=[{...rule,label:rule.value+' '+rule.unit}];}
  const h=get('hours'),hours=h===''?null:Number(h.replace(',','.'));if(hours!==null&&(!Number.isFinite(hours)||hours<0))throw Error('HH deve ser um número positivo ou zero, sem separador de milhar.');

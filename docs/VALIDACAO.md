@@ -8,4 +8,6 @@ Verificação realizada em 19/09/2026.
 - Verificado bloqueio da análise de capacidade quando faltam HH.
 - JavaScript verificado sintaticamente. HTML independente exercitado nos testes de integração.
 
-Limites da verificação: não houve inspeção visual em navegador real, porque o navegador disponível não permite abrir o arquivo local. Não houve publicação no GitHub Pages, teste de impressão real nem medição de desempenho em bases de 20.000 linhas. Os testes não equivalem a homologação operacional.
+A versão publicada no GitHub Pages foi aberta em navegador real. O exemplo gerou 12 equipamentos, 189 ocorrências e 437,5 HH, com inspeção visual de indicadores e mapa.
+
+Limites da verificação: não houve teste de impressão real, inspeção em dispositivo móvel nem medição de desempenho em bases de 20.000 linhas. Os testes não equivalem a homologação operacional.

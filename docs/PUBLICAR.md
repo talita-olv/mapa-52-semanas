@@ -1,6 +1,6 @@
 # Publicação no GitHub
 
-Este pacote está pronto para um repositório estático. Ele ainda não representa um site publicado.
+Projeto publicado em https://talita-olv.github.io/mapa-52-semanas/ a partir de https://github.com/talita-olv/mapa-52-semanas, branch main e pasta raiz. As instruções abaixo permitem reproduzir a publicação em outro repositório.
 
 ## Criar o repositório
 

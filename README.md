@@ -4,6 +4,8 @@ Transforme bases de manutenção em um mapa anual interativo, com conferência d
 
 **Concepção: Talita Souza** · [Perfil no GitHub](https://github.com/talita-olv) · Versão 1.0.0
 
+**[Abrir a ferramenta online](https://talita-olv.github.io/mapa-52-semanas/)** · [Baixar modelos Excel](exemplos/Modelos_Mapa_52_Semanas.xlsx)
+
 ## Experimentar
 
 Abra `index.html` no navegador e clique em **Explorar exemplo**. Não precisa instalar um programa, criar conta ou enviar dados para um servidor. Mantenha a pasta `assets` ao lado do HTML.
