@@ -1,8 +1,19 @@
-# Mapa de Manutenção · 52 Semanas
+# Hub de Inovações na Manutenção
+
+Ferramentas abertas de planejamento e análise de manutenção, por Talita Souza.
+
+**[Abrir o hub](https://talita-olv.github.io/mapa-52-semanas/hub/)**
+
+- **[Mapa por estratégia](https://talita-olv.github.io/mapa-52-semanas/estrategias/)**: leitura de MAPA_52_SEMANAS, com planos, itens, ciclos e marcações semanais já existentes.
+- **[Mapa por ciclos e datas](https://talita-olv.github.io/mapa-52-semanas/)**: geração de calendário com datas de referência.
+
+Leia [o guia do mapa por estratégia](docs/MAPA_POR_ESTRATEGIA.md).
+
+## Mapa por ciclos e datas
 
 Transforme bases de manutenção em um mapa anual interativo, com conferência de colunas, regras explícitas e processamento no navegador.
 
-**Concepção: Talita Souza** · [Perfil no GitHub](https://github.com/talita-olv) · Versão 1.0.0
+**Concepção: Talita Souza** · [Perfil no GitHub](https://github.com/talita-olv) · Versão 1.1.0
 
 **[Abrir a ferramenta online](https://talita-olv.github.io/mapa-52-semanas/)** · [Baixar modelos Excel](exemplos/Modelos_Mapa_52_Semanas.xlsx)
 

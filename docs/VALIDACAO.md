@@ -11,3 +11,10 @@ Verificação realizada em 19/09/2026.
 A versão publicada no GitHub Pages foi aberta em navegador real. O exemplo gerou 12 equipamentos, 189 ocorrências e 437,5 HH, com inspeção visual de indicadores e mapa.
 
 Limites da verificação: não houve teste de impressão real, inspeção em dispositivo móvel nem medição de desempenho em bases de 20.000 linhas. Os testes não equivalem a homologação operacional.
+
+## Versão 1.1.0 · Hub e mapa por estratégia
+
+- 17 testes automatizados passaram: 11 do calendário anterior e 6 da leitura por estratégia.
+- Verificada localmente a importação de uma planilha completa, com reconciliação independente de registros, equipamentos, estratégias, status e ciclos fora do mapa.
+- Em DOM simulado, verificados filtros, paginação, detalhes, visão por ciclos e preservação de planos/itens.
+- Links locais e sintaxe de scripts verificados. A base usada na validação não foi incluída no repositório.

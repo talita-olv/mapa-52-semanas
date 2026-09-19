@@ -1,0 +1,2 @@
+importScripts('xlsx.full.min.js','strategy-engine.js');
+self.onmessage=function(e){try{self.postMessage({stage:'Lendo as abas da planilha…'});const w=XLSX.read(e.data,{type:'array',dense:true});self.postMessage({stage:'Organizando estratégias, planos e semanas…'});const data=StrategyEngine.parse(w,XLSX);self.postMessage({data});}catch(error){self.postMessage({error:error.message||'Não foi possível ler a planilha.'});}};
