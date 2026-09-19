@@ -1,0 +1,5 @@
+.DS_Store
+node_modules/
+.sites-runtime/
+Mapa_52_Semanas.html
+*.log

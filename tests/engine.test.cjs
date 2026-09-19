@@ -1,0 +1,15 @@
+const {test}=require('node:test');
+const assert=require('node:assert/strict');
+const E=require('../assets/engine.js');
+const iso=d=>d.toISOString().slice(0,10);
+test('Mensal preserva dia 31 após fevereiro',()=>{const d=E.date('31/01/2026'),r=E.interval('Mensal');assert.equal(iso(E.add(d,r,1)),'2026-02-28');assert.equal(iso(E.add(d,r,2)),'2026-03-31');});
+test('Ano bissexto e retorno ao dia 29',()=>{const d=E.date('29/02/2024'),r=E.interval('Anual');assert.equal(iso(E.add(d,r,1)),'2025-02-28');assert.equal(iso(E.add(d,r,4)),'2028-02-29');});
+test('Rejeita data inválida e ano de dois dígitos',()=>{assert.throws(()=>E.date('31/02/2026'));assert.throws(()=>E.date('01/01/26'));});
+test('Quinzenal exige convenção distinta de duas semanas',()=>{assert.deepEqual(E.interval('quinzenal'),{value:15,unit:'DIA'});assert.deepEqual(E.interval('quinzenal','','14'),{value:14,unit:'DIA'});assert.deepEqual(E.interval('2 semanas'),{value:2,unit:'SEMANA'});});
+test('90 dias difere de 3 meses',()=>{const a=E.date('01/01/2026');assert.equal(iso(E.add(a,E.interval('90 dias'),1)),'2026-04-01');assert.equal(iso(E.add(E.date('01/02/2026'),E.interval('3M'),1)),'2026-05-01');assert.equal(iso(E.add(E.date('01/02/2026'),E.interval('90 dias'),1)),'2026-05-02');});
+test('Calendário ISO inclui semana 53 de 2026',()=>{const p=E.period(2026);assert.equal(p.weeks,53);assert.equal(iso(p.from),'2025-12-29');assert.equal(iso(p.to),'2027-01-04');assert.equal(E.period(2027).weeks,52);});
+test('Última execução pula a data base',()=>{const a=E.date('10/01/2026'),r=E.interval('mensal');assert.equal(iso(E.occurrences(a,r,2026,false)[0].date),'2026-01-10');assert.equal(iso(E.occurrences(a,r,2026,true)[0].date),'2026-02-10');});
+test('Âncora antiga é projetada sem deriva ou corte',()=>{const r=E.occurrences(E.date('31/01/2000'),E.interval('mensal'),2026);assert.equal(r.length,13);assert.equal(iso(r[0].date),'2025-12-31');assert.equal(iso(r[2].date),'2026-02-28');assert.equal(iso(r[3].date),'2026-03-31');});
+test('Rejeita contador, zero, negativo e regra desconhecida',()=>{for(const x of [[500,'H'],[0,'MES'],[-1,'DIA'],['EST_X','']])assert.throws(()=>E.interval(...x));});
+test('Estratégias possuem vários pacotes e rejeitam duplicação',()=>{const m=E.strategies('EST_A;1M;1;MES\nEST_A;3M;3;MES');assert.equal(m.get('EST_A').length,2);assert.throws(()=>E.strategies('EST_A;1M;1;MES\nEST_A;1M;3;MES'));});
+test('Ciclo diário cobre todos os dias do ano ISO',()=>{const rows=E.occurrences(E.date('01/01/2020'),E.interval('diário'),2026);assert.equal(rows.length,371);assert.equal(rows.at(-1).week,53);});
