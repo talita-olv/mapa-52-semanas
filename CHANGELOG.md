@@ -1,3 +1,7 @@
+## 2026-10-16 · Identidade visual (Issue #2)
+- Marca TS vetorial, favicon e tema azul petróleo/turquesa no mapa principal, estratégias e hub.
+- Banner de portfólio e consistência com Reliability Lab e SmartRoute; nenhum cálculo de periodicidade alterado.
+
 # Histórico
 
 ## 1.1.0 · 19/09/2026

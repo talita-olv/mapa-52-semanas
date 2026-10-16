@@ -1,0 +1,18 @@
+/* Identidade do hub alinhada ao Reliability Lab. */
+:root{--navy:#081b2e;--teal:#4ad7be;color:#edf5f9;background:#08111c;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:dark}
+body{background:#08111c;color:#edf5f9}.top{background:#0a1522;border-bottom:1px solid #2b4859}
+.logo,.top nav{color:#edf5f9}.subbrand{color:#a2bbca}
+.symbol{background:transparent;width:50px;height:50px}.symbol img{display:block;width:50px;height:50px}
+.github{border-color:#446075}.intro{border-bottom:1px solid #294557}.eyebrow,.section-number,.guide-grid article>span,.guide-grid a,.principles a{color:#4ad7be}
+.lead,.intro-note>span:last-child,.section-title>span,.guide-grid p,.principles p{color:#afc7d4}
+.intro-note{border-left-color:#3b5a70}.intro-note p,.intro-note strong,h1,h2,h3{color:#edf5f9}
+.featured,.tool,.secondary-tool{background:#0e1d2d;border-color:#294557;color:#edf5f9}
+.featured{background:linear-gradient(135deg,#102338,#0c3745)}
+.tool p,.secondary-tool p,.tool small,.secondary-tool small{color:#aac4d2}
+.secondary-tool .tag,.secondary-tool .status,.tool .tag{color:#4ad7be}
+.secondary-tool .status,.status{border-color:#426377}.large-number{color:#d1e7ef}
+.primary{background:#4ad7be;color:#092e35}.secondary{background:#1b3e52;color:#eff8fb;border-color:#496a80}
+.mini-map{background:#15394e}.mini-map>span{background:#22526a}.mini-map .quiet{background:#19384c}
+.guide-grid,.guides{border-color:#294557}.principles{background:#102b3b}.principle-tags span{background:#193949;color:#d2e9ef}
+.collaborate{border-color:#294557}footer{color:#a5bece}
+a:focus-visible,button:focus-visible{outline-color:#4ad7be}

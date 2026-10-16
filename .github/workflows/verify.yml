@@ -1,0 +1,20 @@
+name: Verify Mapa 52 Semanas
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Testar periodicidade, mapa e estratégias
+        run: node --test tests/*.test.cjs
+      - name: Conferir identidade e caminhos das três interfaces
+        run: node --test tests/brand.test.cjs

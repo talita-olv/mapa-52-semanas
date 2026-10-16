@@ -1,3 +1,5 @@
+![Mapa 52 Semanas — Identidade Talita Souza](assets/project-banner.svg)
+
 # Hub de Inovações na Manutenção
 
 Ferramentas abertas de planejamento e análise de manutenção, por Talita Souza.
@@ -100,3 +102,8 @@ Abra uma issue descrevendo o comportamento esperado e o observado, com um exempl
 ## Licença
 
 Código do projeto sob [MIT](LICENSE). SheetJS CE possui licença Apache 2.0, preservada em `assets/SHEETJS-LICENSE.txt`. Consulte `THIRD_PARTY_NOTICES.md`.
+
+
+## Identidade visual do portfólio
+
+Este projeto integra a família **Talita Souza — Engenharia, Dados e Automação**, com a mesma paleta técnico-industrial do Reliability Lab e SmartRoute. Os arquivos [marca-mãe](assets/talita-brand.svg) e [símbolo](assets/talita-mark.svg) são vetoriais, reaproveitados nas três interfaces do mapa (principal, estratégias, hub), mantendo tratamentos e regras de negócio independentes.
