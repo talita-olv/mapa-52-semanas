@@ -1,0 +1,23 @@
+/* Família visual Talita Souza — base Reliability Lab. Ajustes apenas de apresentação. */
+:root{--navy:#081b2e;--teal:#4ad7be;--line:#294557;background:#08111c;color:#edf5f9;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:dark}
+body{background:#08111c;color:#edf5f9}
+header{background:#0a1522;border-bottom:1px solid #294557}
+.brand,.author,.author a{color:#edf5f9}.brand small,.author{color:#abc3d0}
+.brandmark{display:grid;place-items:center;width:50px;height:50px;padding:0;background:transparent;border-radius:9px}.brandmark img{width:50px;height:50px;display:block}
+main{color:#edf5f9}h1,h2,summary,strong{color:#edf5f9}
+p,.muted{color:#a7bfcd}.eyebrow{color:var(--teal)}nav{color:#a4bbcb}nav .active{color:var(--teal)}
+.card,.stats article{background:#0e1d2d;border:1px solid #294557;color:#edf5f9}
+.note,.empty{background:#102c3b;border-color:#31556b}.note p,.note h2{color:#edf5f9}
+.upload{background:#132f3a;border-color:#3b8d88}.upload strong,.textbutton{color:#65e9d0}.upload span,.privacy{color:#a6c6cf}
+label{color:#c5d9e6}input,select,textarea{background:#13283a;color:#edf5f9;border-color:#39576a}input::placeholder,textarea::placeholder{color:#90a8b9}
+input:focus,select:focus,textarea:focus,button:focus-visible{outline:3px solid #4ad7be;outline-offset:2px}
+button{background:#4ad7be;color:#082b32}button:hover{background:#79ebd7}.secondary{background:#183447;color:#dfedf5;border-color:#4b697e}
+.badge{background:#17443f;color:#a2f9e3}
+.examples span{color:#c3d8e4;border-left-color:#4ad7be}.examples b{color:#fff}
+th{background:#18374b;color:#e3f2fa}td,th{border-color:#294557}td{color:#d6e6ee}
+.stats article{border-top:3px solid #4ad7be}.stats span,.stats small{color:#a0b6c8}.stats strong{color:#fff}
+.filters{background:#0e1d2d}.chartscroll,.mapscroll,.previewtable{background:#0e1d2d;color:#d6e8f0}
+.ok{color:#91edcd}.error{color:#ffa18e}
+.note,.notice:not(.danger){border-color:#375568}
+dialog{background:#0e1d2d;color:#edf5f9;border:1px solid #375568}
+footer{color:#a7c2cf;border-color:#28475a}
