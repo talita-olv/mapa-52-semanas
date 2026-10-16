@@ -1,109 +1,96 @@
-![Mapa 52 Semanas — Identidade Talita Souza](assets/project-banner.svg)
+# Mapa 52 Semanas · Planejamento de Manutenção
 
-# Hub de Inovações na Manutenção
+**Ferramenta demonstrativa de planejamento anual por ciclos, datas programadas e estratégias de manutenção — com mapas semanais interativos.**  
+Desenvolvido por **Talita Souza** · Engenharia de Controle e Automação · PCM, dados e automação
 
-Ferramentas abertas de planejamento e análise de manutenção, por Talita Souza.
+**[Abrir a demonstração online ↗](https://talita-olv.github.io/mapa-52-semanas/)** · **[Mapa por estratégias ↗](https://talita-olv.github.io/mapa-52-semanas/estrategias/)** · [Hub de ferramentas](https://talita-olv.github.io/mapa-52-semanas/hub/)
 
-**[Abrir o hub](https://talita-olv.github.io/mapa-52-semanas/hub/)**
+[![Testes](https://img.shields.io/badge/testes-Node.js-4ad7be?style=flat-square&logo=nodedotjs&logoColor=black)](tests/) [![Tecnologia](https://img.shields.io/badge/JavaScript-sem%20framework-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](assets/engine.js) [![Excel](https://img.shields.io/badge/Excel-SheetJS-79aefa?style=flat-square)](assets/SHEETJS-LICENSE.txt) [![Licença](https://img.shields.io/badge/licen%C3%A7a-MIT-79aefa?style=flat-square)](LICENSE)
 
-- **[Mapa por estratégia](https://talita-olv.github.io/mapa-52-semanas/estrategias/)**: leitura de MAPA_52_SEMANAS, com planos, itens, ciclos e marcações semanais já existentes.
-- **[Mapa por ciclos e datas](https://talita-olv.github.io/mapa-52-semanas/)**: geração de calendário com datas de referência.
+![Prévia ilustrativa do Mapa 52 Semanas: registros de manutenção distribuídos pelas semanas](docs/overview.svg)
 
-Leia [o guia do mapa por estratégia](docs/MAPA_POR_ESTRATEGIA.md).
+> **Atenção:** demonstração independente com **exemplos fictícios**. O mapa representa uma projeção ou a leitura das marcações da base informada — **não substitui programação oficial do CMMS, ordens de serviço, aprovações ou execução de campo**. O calendário pode ter 52 ou 53 semanas ISO.
 
-## Mapa por ciclos e datas
+## O problema
 
-Transforme bases de manutenção em um mapa anual interativo, com conferência de colunas, regras explícitas e processamento no navegador.
+Visualizar milhares de intervenções em planilhas extensas dificulta conferir ciclos, identificar concentrações de demanda e entender quais equipamentos serão atendidos em cada semana.
 
-**Concepção: Talita Souza** · [Perfil no GitHub](https://github.com/talita-olv) · Versão 1.1.0
+O Mapa 52 Semanas oferece duas entradas complementares: **projetar datas a partir de ciclos e âncoras** ou **visualizar datas/pacotes já estruturados em estratégias**, preservando as premissas de cada base.
 
-**[Abrir a ferramenta online](https://talita-olv.github.io/mapa-52-semanas/)** · [Baixar modelos Excel](exemplos/Modelos_Mapa_52_Semanas.xlsx)
+## O que a demonstração permite
 
-## Experimentar
+- Importar planilhas Excel (`.xlsx` ou `.xls`) e CSV, escolhendo a aba e a linha de cabeçalho.
+- Conferir o mapeamento das colunas antes da geração e revisar inconsistências/duplicatas.
+- Gerar ocorrências por periodicidade textual, ciclos, datas já programadas ou pacotes independentes de estratégias.
+- Distinguir ciclos de **15 dias** de ciclos de **2 semanas (14 dias)**, sem converter meses em 30 dias.
+- Interpretar a data-base como primeira/próxima ocorrência ou última execução, conforme seleção.
+- Construir um calendário com **52 ou 53 semanas ISO**, com distribuição semanal e pesquisa por equipamento/atividade.
+- Filtrar por local, criticidade e tipo de manutenção; visualizar HH estimadas quando preenchidas.
+- Analisar concentração e capacidade semanal com base nos dados informados.
+- Exportar ocorrências para CSV e usar a impressão do navegador para PDF.
+- Abrir o **[mapa por estratégias](https://talita-olv.github.io/mapa-52-semanas/estrategias/)**, com visão dos planos, itens, ciclos, status de cruzamento e marcações S01–S52 existentes na planilha.
 
-Abra `index.html` no navegador e clique em **Explorar exemplo**. Não precisa instalar um programa, criar conta ou enviar dados para um servidor. Mantenha a pasta `assets` ao lado do HTML.
+## Como utilizar
 
-Para distribuir como arquivo único, execute `python3 scripts/build_standalone.py`. O resultado será `Mapa_52_Semanas.html`, com JavaScript, estilos e leitor de Excel incorporados. Python é usado somente para empacotar o projeto, nunca para utilizar o mapa.
+**Opção A — Tenho periodicidade, ciclo ou datas programadas**
 
-## O que funciona
+1. Abra o [mapa por ciclos e datas](https://talita-olv.github.io/mapa-52-semanas/) e selecione **Explorar exemplo** ou importe o [modelo Excel](exemplos/Modelos_Mapa_52_Semanas.xlsx).
+2. Escolha o tipo de entrada e o ano ISO do planejamento.
+3. Confirme as colunas, a data de referência e o tratamento de periodicidades.
+4. Confira pendências; se optar por geração parcial, autorize a exclusão das linhas inválidas.
+5. Gere o mapa, filtre as semanas e exporte os resultados.
 
-- Importação de Excel `.xlsx`, `.xls` e CSV, seleção de aba e linha do cabeçalho.
-- Sugestões por nome de coluna, com conferência manual obrigatória.
-- Periodicidade textual; ciclo e unidade; datas programadas; estratégias com pacotes independentes.
-- Datas mensais e anuais de calendário, sem transformar mês em 30 dias.
-- Escolha explícita de “quinzenal”: 15 dias ou 14 dias.
-- Primeira/próxima ocorrência ou última execução como data de referência.
-- Ano ISO com 52 ou 53 semanas, sem descartar a semana 53.
-- Pendências por linha, aviso de duplicidade e opção explícita de excluir linhas inválidas.
-- Filtros por local, criticidade e tipo, além de busca por equipamento/atividade.
-- Quantidade semanal, HH quando informadas, mapa com detalhes e exportação CSV.
-- Avaliação de capacidade com HH completas e capacidade semanal fornecida.
-- Modelos Excel disponíveis pelo botão do aplicativo, além dos exemplos deste repositório.
-- Impressão/PDF dos indicadores, gráfico e página atual do mapa (até 60 linhas).
+**Opção B — Já possuo S01 a S52 por estratégia**
 
-## Como usar
+1. Abra o [mapa por estratégias](https://talita-olv.github.io/mapa-52-semanas/estrategias/).
+2. Importe uma base com a aba `MAPA_52_SEMANAS`. As abas `RESUMO_ESTRATEGIAS` e `LEIA_ME` complementam a análise.
+3. Revise planos, equipamentos, ciclos e pendências de cruzamento. **As marcações são lidas da planilha, não recalculadas como execução real.**
+4. Consulte as semanas e exporte os dados filtrados.
 
-1. Selecione a planilha, aba e linha de cabeçalho.
-2. Escolha o formato e o ano ISO.
-3. Confirme as colunas e o significado da data-base.
-4. Em estratégias, preencha as equivalências `código;pacote;ciclo;unidade`.
-5. Confira a base. Corrija as pendências ou autorize conscientemente a geração parcial.
-6. Gere o mapa, filtre e exporte as ocorrências.
+A documentação específica está em [Guia do mapa por estratégia](docs/MAPA_POR_ESTRATEGIA.md) e [Regras e formatos](docs/REGRAS.md).
 
-Leia [Regras e formatos](docs/REGRAS.md) e [Publicar no GitHub](docs/PUBLICAR.md).
+## Tecnologias e organização
 
-## Privacidade
+| Tecnologia / arquivo | Aplicação |
+| --- | --- |
+| HTML, CSS e JavaScript | Interface interativa, validações, calendário e filtros |
+| `assets/engine.js` e `assets/app.js` | Cálculo de ciclos, datas, semanas, importação e exportação |
+| `assets/strategy-engine.js` e `assets/strategy-app.js` | Leitura das estratégias e visualização semanal |
+| SheetJS CE local | Leitura Excel, sem download de biblioteca em CDN |
+| `exemplos/` | Modelos e bases fictícias |
+| `tests/` | Testes automatizados de calendário e estratégias |
+| GitHub Pages | Publicação pública, sem autenticação |
 
-Arquivos importados ficam na memória do navegador. O código não envia planilhas, nomes de ativos ou ocorrências para servidores. A biblioteca de Excel está incluída no projeto, sem carregamento por CDN. Fechar ou recarregar a página apaga o estado. Não há telemetria, cookies do aplicativo ou salvamento automático.
+O mapa pode ser aberto como projeto estático. Para distribuir um HTML independente, execute `python3 scripts/build_standalone.py`; o Python serve apenas para **empacotar**, não para operar o mapa.
 
-O provedor que hospeda o site pode registrar requisições normais de acesso ao site. Isso é diferente de receber as planilhas: o aplicativo não faz upload delas.
+## Premissas e limites
 
-Todos os exemplos são fictícios e não representam uma empresa. Não publique bases operacionais ou dados privados neste repositório.
+- Semanas ISO começam na segunda-feira; dependendo do ano, existe semana 53 e sobreposição entre datas civis de anos adjacentes.
+- A projeção preserva meses de calendário e suas variações de dias.
+- Pacotes de estratégia são tratados de forma independente e cumulativa; a ferramenta não reproduz todas as regras avançadas de hierarquia/supressão/tolerância de CMMS.
+- Ciclos condicionais, por produção ou por horímetro exigem previsão externa.
+- HH da seleção e capacidade semanal não representam disponibilidade efetiva de pessoas, especialidades, feriados ou turnos.
+- O mapa por ciclos limita a importação a 20 MB, 20.000 linhas por aba e 250.000 ocorrências; outras visualizações possuem suas próprias restrições documentadas.
+- Duplicidades e inconsistências requerem revisão; **não se criam ordens, apontamentos ou execução confirmada**.
 
-## Limites conhecidos
-
-- Não substitui o agendamento oficial do CMMS e não cria ordens.
-- Ciclos de horímetro, produção ou condição precisam de previsão externa; não são estimados aqui.
-- Pacotes de estratégia são cumulativos, independentes e usam a mesma âncora. Não reproduz supressão/hierarquia, tolerâncias, deslocamentos ou calendário fabril do SAP. Para fidelidade ao CMMS, importe datas programadas.
-- Em estratégias com vários pacotes, HH na linha são bloqueadas para evitar multiplicação indevida. Use uma linha por pacote em ciclo + unidade para atribuir HH específicas.
-- Limites de proteção: 20 MB, 20.000 linhas por aba e 250.000 ocorrências. Bases muito densas devem ser divididas. Não há promessa de desempenho uniforme para todo equipamento/navegador.
-- Duplicatas são avisadas e mantidas. Confira-as antes de gerar.
-- Uma linha do mapa representa equipamento + local + atividade + regra e atributos. O mesmo ativo pode ocupar várias linhas.
-- A comparação de capacidade é da seleção atual, usando o mesmo valor de HH em todas as semanas. Não considera especialidades, turnos, feriados ou indisponibilidades.
-- CSV é exportado com `;`, UTF-8 e proteção contra fórmulas em valores textuais.
-
-## Estrutura técnica
-
-| Arquivo | Papel |
-|---|---|
-| `index.html` | Interface e instruções |
-| `assets/style.css` | Estilos responsivos e impressão |
-| `assets/engine.js` | Datas, ciclos, semanas ISO e estratégias |
-| `assets/app.js` | Importação, validação, filtros e exportações |
-| `assets/xlsx.full.min.js` | SheetJS CE 0.20.3 incluída localmente |
-| `exemplos/` | Bases fictícias |
-| `tests/engine.test.cjs` | Testes do calendário |
-| `scripts/build_standalone.py` | Empacotamento em HTML único |
+Leia os detalhes em [Regras](docs/REGRAS.md) e [Validação](docs/VALIDACAO.md).
 
 ## Testes
 
-Com Node.js instalado: `node --test tests/engine.test.cjs`.
+```bash
+node --test tests/*.test.cjs
+```
 
-Os testes cobrem preservação do dia 31, ano bissexto, validação de datas, distinção entre 15 e 14 dias, dias versus meses, semana 53, última execução, âncora histórica, unidades incompatíveis e pacotes.
+Os testes incluem datas inválidas, dias 29/31, anos bissextos, períodos ISO, ciclos, estratégias e regras de leitura dos pacotes. A verificação de identidade checa as interfaces principal, estratégias e hub. Uma execução bem-sucedida dos testes não substitui a revisão do resultado no navegador.
 
-## Alcance do projeto
+## Privacidade, licença e autoria
 
-Stars, forks e tráfego do repositório ajudam a acompanhar interesse. **Visitas ao repositório não equivalem a pessoas utilizando o mapa.** Esta versão não mede usuários do aplicativo nem planilhas importadas. Não apresenta contadores fictícios. Uma futura medição de uso precisa ser projetada separadamente, sem coletar dados de manutenção.
+A importação ocorre **na memória do navegador**, sem upload da planilha para um backend próprio e sem salvamento automático. O provedor da hospedagem pode registrar acessos normais ao site. Não publique arquivos corporativos ou dados pessoais no repositório.
 
-## Contribuir
+Código principal sob [licença MIT](LICENSE); a biblioteca SheetJS possui licença própria, preservada em [SHEETJS-LICENSE.txt](assets/SHEETJS-LICENSE.txt) e nos [avisos de terceiros](THIRD_PARTY_NOTICES.md). A titularidade e a licença deste projeto são independentes das regras de outros repositórios do portfólio.
 
-Abra uma issue descrevendo o comportamento esperado e o observado, com um exemplo fictício mínimo. Não anexe bases corporativas. Mudanças no calendário devem incluir teste que demonstre a regra.
+---
 
-## Licença
+**Identidade visual:** [marca Talita Souza](assets/talita-brand.svg) · [banner do Mapa 52 Semanas](assets/project-banner.svg) · [template de README](https://github.com/talita-olv/talita-olv/blob/main/README_TEMPLATE.md)
 
-Código do projeto sob [MIT](LICENSE). SheetJS CE possui licença Apache 2.0, preservada em `assets/SHEETJS-LICENSE.txt`. Consulte `THIRD_PARTY_NOTICES.md`.
-
-
-## Identidade visual do portfólio
-
-Este projeto integra a família **Talita Souza — Engenharia, Dados e Automação**, com a mesma paleta técnico-industrial do Reliability Lab e SmartRoute. Os arquivos [marca-mãe](assets/talita-brand.svg) e [símbolo](assets/talita-mark.svg) são vetoriais, reaproveitados nas três interfaces do mapa (principal, estratégias, hub), mantendo tratamentos e regras de negócio independentes.
+Desenvolvido por **[Talita Souza](https://github.com/talita-olv)** · [LinkedIn](https://www.linkedin.com/in/talita-souza-136590122/)
